@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raízes do Nordeste - Pedidos</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Adicionando ícones profissionais -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-area">
+                <i class="fa-solid fa-utensils"></i>
+                <h1>Raízes do Nordeste</h1>
+            </div>
+            <p><i class="fa-solid fa-location-dot"></i> Unidade: Recife (Centro)</p>
+            <div class="fidelidade-badge"><i class="fa-solid fa-star"></i> Fidelidade: <span id="pontosUsuario">150</span> pts</div>
+        </div>
+    </header>
+
+    <!-- Banner LGPD Moderno -->
+    <div id="lgpdOverlay" class="overlay">
+        <div class="lgpd-modal">
+            <i class="fa-solid fa-shield-halved lgpd-icon"></i>
+            <h2>Privacidade e Termos de Uso</h2>
+            <p>Para o funcionamento do programa de fidelidade e personalização da sua experiência, recolhemos dados de navegação e histórico de pedidos. Ao continuar, concorda com a nossa política de tratamento de dados conforme a LGPD.</p>
+            <button class="btn btn-primary" onclick="aceitarLGPD()">Concordar e Aceder ao Cardápio</button>
+        </div>
+    </div>
+
+    <main id="mainApp" class="container hidden">
+        <section class="menu-section">
+            <h2 class="section-title">Nosso Cardápio</h2>
+            <div id="menuContainer" class="grid-menu">
+                <!-- Produtos renderizados via JS -->
+            </div>
+        </section>
+
+        <!-- Carrinho agora como uma barra lateral no desktop -->
+        <aside class="cart-section">
+            <h2 class="section-title"><i class="fa-solid fa-cart-shopping"></i> O Seu Pedido</h2>
+            <div id="cartItems" class="cart-items">
+                <p class="empty-cart"><i class="fa-solid fa-basket-shopping"></i> O carrinho está vazio.</p>
+            </div>
+            <div class="cart-footer">
+                <div class="total-row">
+                    <span>Total:</span>
+                    <h3>R$ <span id="cartTotal">0.00</span></h3>
+                </div>
+                <button class="btn btn-success btn-full" onclick="processarPagamento()">
+                    <i class="fa-solid fa-credit-card"></i> Pagar via Serviço Externo
+                </button>
+                <div id="paymentStatus" class="payment-status"></div>
+            </div>
+        </aside>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
